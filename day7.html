@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kiss Day 💋</title>
+<style>
+body{
+margin:0;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;color:white;
+background:linear-gradient(135deg,#b3003c,#ff1744);
+}
+.card{position:relative;width:95%;max-width:1000px;height:90vh;background:rgba(0,0,0,.35);border-radius:25px;}
+.photo{position:absolute;width:150px;height:150px;object-fit:cover;border-radius:18px;}
+.p1{top:25px;left:25px;} .p2{top:25px;right:25px;}
+.p3{bottom:25px;left:25px;} .p4{bottom:25px;right:25px;}
+.p5{top:50%;left:25px;transform:translateY(-50%);}
+.p6{top:50%;right:25px;transform:translateY(-50%);}
+.p7{bottom:25px;left:50%;transform:translateX(-50%);}
+.message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:55%;text-align:center;}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="photo43.jpg" class="photo p1">
+<img src="photo44.jpg" class="photo p2">
+<img src="photo45.jpg" class="photo p3">
+<img src="photo46.jpg" class="photo p4">
+<img src="photo47.jpg" class="photo p5">
+<img src="photo48.jpg" class="photo p6">
+<img src="photo49.jpg" class="photo p7">
+
+<div class="message">
+<h2>💋 Kiss Day 💋</h2>
+<p>
+ I will kiss you..head to toe...and so so deep that it will touch your soul. I will kiss you inside..... and out. Every insecurity of your body will be kissed by my lips. Every moment I will be bored, I will come to you, kiss you and then kiss you again till we kiss again... hehehe. I love kissing you. You are so...pretty...i can't help but kiss my Pyunika. I love youuuu 😘😘😘😘😘😘
+</p>
+</div>
+</div>
+<script>
+const unlockDate = new Date("2026-02-13"); // CHANGE THIS DATE
+
+const today = new Date();
+
+if (today < unlockDate) {
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:sans-serif;
+        background:#111;
+        color:white;
+        text-align:center;
+    ">
+        <h1>💌 Not yet baby 💌</h1>
+        <p>Come back on ${unlockDate.toDateString()} ❤️</p>
+    </div>`;
+}
+</script>
+</body>
+</html>

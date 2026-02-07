@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Our Week Together 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:linear-gradient(135deg,#ffd6e7,#ff9ecb,#ff6fa5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
+
+.container{
+  text-align:center;
+  width:95%;
+  max-width:750px;
+}
+
+h1{
+  margin-bottom:30px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.day{
+  padding:18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.18);
+  cursor:pointer;
+  transition:.2s;
+  white-space:pre-line;
+  font-weight:bold;
+}
+
+.day:hover{
+  transform:scale(1.05);
+}
+
+.locked{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.unlocked{
+  background:#ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Our Valentine Week 💌</h1>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+const days=[
+  {name:"🌹 Rose Day", date:7},
+  {name:"💍 Propose Day", date:8},
+  {name:"🍫 Chocolate Day", date:9},
+  {name:"🧸 Teddy Day", date:10},
+  {name:"🤞 Promise Day", date:11},
+  {name:"🤗 Hug Day", date:12},
+  {name:"💋 Kiss Day", date:13},
+  {name:"❤️ Valentine’s Day", date:14}
+];
+
+/* sentence passwords */
+const passwords={
+  1:"You",
+  2:"stole",
+  3:"my",
+  4:"heart",
+  5:"now",
+  6:"keep",
+  7:"it",
+  8:"Pyunika"
+};
+
+const grid=document.getElementById("grid");
+const now=new Date();
+const today=now.getDate();
+
+days.forEach((d,i)=>{
+  const div=document.createElement("div");
+  div.className="day";
+
+  if(today>=d.date){
+    div.classList.add("unlocked");
+    div.innerText=d.name+"\n(Open)";
+    div.onclick=()=>openDay(i+1);
+  }else{
+    div.classList.add("locked");
+    div.innerText=d.name+"\n🔒 Locked";
+  }
+
+  grid.appendChild(div);
+});
+
+function openDay(num){
+  const pass=prompt("Enter today's password 💖");
+  if(pass===passwords[num]){
+    window.location.href="day"+num+".html";
+  }else{
+    alert("Wrong password 😛");
+  }
+}
+</script>
+
+</body>
+</html>

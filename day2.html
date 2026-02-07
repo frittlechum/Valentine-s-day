@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Propose Day 💍</title>
+<style>
+body{
+margin:0;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+background:
+linear-gradient(rgba(255,105,180,.6),rgba(255,105,180,.6)),
+url("https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;background-position:center;
+}
+.card{position:relative;width:95%;max-width:1000px;height:90vh;background:rgba(255,255,255,.18);backdrop-filter:blur(14px);border-radius:25px;}
+.photo{position:absolute;width:150px;height:150px;object-fit:cover;border-radius:18px;}
+.p1{top:25px;left:25px;} .p2{top:25px;right:25px;}
+.p3{bottom:25px;left:25px;} .p4{bottom:25px;right:25px;}
+.p5{top:50%;left:25px;transform:translateY(-50%);}
+.p6{top:50%;right:25px;transform:translateY(-50%);}
+.p7{bottom:25px;left:50%;transform:translateX(-50%);}
+.message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:55%;text-align:center;}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="photo8.jpg" class="photo p1">
+<img src="photo9.jpg" class="photo p2">
+<img src="photo10.jpg" class="photo p3">
+<img src="photo11.jpg" class="photo p4">
+<img src="photo12.jpg" class="photo p5">
+<img src="photo13.jpg" class="photo p6">
+<img src="photo14.jpg" class="photo p7">
+
+<div class="message">
+<h2>💍 Propose Day 💍</h2>
+<p>
+Thank you for coming into my life and showing me how soft and exciting love can be. I am ready to do everything for my little cute baby, everything. I know I have said this a lot of times by now but rn i mean this the most... I LOVE YOU PYUNIKA 💗. PLEASE MARRRY MEE 💍!
+</p>
+</div>
+</div>
+<script>
+const unlockDate = new Date("2026-02-08"); // CHANGE THIS DATE
+
+const today = new Date();
+
+if (today < unlockDate) {
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:sans-serif;
+        background:#111;
+        color:white;
+        text-align:center;
+    ">
+        <h1>💌 Not yet baby 💌</h1>
+        <p>Come back on ${unlockDate.toDateString()} ❤️</p>
+    </div>`;
+}
+</script>
+</body>
+</html>

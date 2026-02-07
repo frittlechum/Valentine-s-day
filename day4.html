@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day 🧸</title>
+<style>
+body{
+margin:0;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;color:white;
+background:
+linear-gradient(rgba(255,150,180,.6),rgba(255,150,180,.6)),
+url("https://images.unsplash.com/photo-1602734846297-9299fc2d4703?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+background-size:cover;background-position:center;	
+}
+.card{position:relative;width:95%;max-width:1000px;height:90vh;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);border-radius:25px;}
+.photo{position:absolute;width:150px;height:150px;object-fit:cover;border-radius:18px;}
+.p1{top:25px;left:25px;} .p2{top:25px;right:25px;}
+.p3{bottom:25px;left:25px;} .p4{bottom:25px;right:25px;}
+.p5{top:50%;left:25px;transform:translateY(-50%);}
+.p6{top:50%;right:25px;transform:translateY(-50%);}
+.p7{bottom:25px;left:50%;transform:translateX(-50%);}
+.message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:55%;text-align:center;}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="photo22.jpg" class="photo p1">
+<img src="photo23.jpg" class="photo p2">
+<img src="photo24.jpg" class="photo p3">
+<img src="photo25.jpg" class="photo p4">
+<img src="photo26.jpg" class="photo p5">
+<img src="photo27.jpg" class="photo p6">
+<img src="photo28.jpg" class="photo p7">
+
+<div class="message">
+<h2>🧸 Teddy Day 🧸</h2>
+<p>
+meri jaan...You are my teddy and i am MORE THAN HAPPY to be your teddy and your fav plushie... plooooshieee. heheeh aaya yaaad? mwahh mwahhhh, ik mai to hu hi and uske upar se na... jo jo plushie will catch ur eye, sab khareedlunga apke liye. <333 I AM YOUR TEDDY BEARRRR. I LOVEEE YOUUUUU MWMWMWAHHHHHHHH 🧸😘
+</p>
+</div>
+</div>
+<script>
+const unlockDate = new Date("2026-02-10"); // CHANGE THIS DATE
+
+const today = new Date();
+
+if (today < unlockDate) {
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:sans-serif;
+        background:#111;
+        color:white;
+        text-align:center;
+    ">
+        <h1>💌 Not yet baby 💌</h1>
+        <p>Come back on ${unlockDate.toDateString()} ❤️</p>
+    </div>`;
+}
+</script>
+</body>
+</html>

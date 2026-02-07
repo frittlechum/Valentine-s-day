@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Be My Valentine 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffd6e7,#ff9ecb,#ff6fa5);
+}
+
+/* center */
+.card{
+  text-align:center;
+}
+
+h1{
+  color:white;
+}
+
+img{
+  width:170px;
+  margin:20px 0;
+}
+
+/* YES button */
+#yes{
+  padding:12px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:all .15s;
+}
+
+/* NO button */
+#no{
+  padding:12px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:white;
+  cursor:pointer;
+  position:fixed;
+  z-index:10;
+}
+
+/* confetti */
+.confetti{
+  position:fixed;
+  border-radius:2px;
+  opacity:.9;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* hearts */
+.heart{
+  position:fixed;
+  color:white;
+  opacity:.6;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Will you be my Valentine? 💖</h1>
+  <img src="teddy.png"><br>
+  <button id="yes">Yes ❤️</button>
+</div>
+
+<button id="no">No 😢</button>
+
+
+<script>
+const yes=document.getElementById("yes");
+const no=document.getElementById("no");
+
+let yesFont=18;
+let yesPad=12;
+let noScale=1;
+let tries=0;
+
+
+/* start beside YES */
+window.onload=()=>{
+  const r=yes.getBoundingClientRect();
+  no.style.left=(r.right+15)+"px";
+  no.style.top=r.top+"px";
+};
+
+
+/* YES grows EVERY TIME NO MOVES */
+function growYes(){
+  yesFont+=1.5;
+  yesPad+=1.5;
+
+  yes.style.fontSize=yesFont+"px";
+  yes.style.padding=yesPad+"px "+(yesPad*2)+"px";
+}
+
+
+/* shrink NO */
+function shrinkNo(){
+  tries++;
+  if(tries<=50){
+    noScale-=0.015;
+    if(noScale<0.25) noScale=0.25;
+    no.style.transform=`scale(${noScale})`;
+  }
+}
+
+
+/* move NO safely */
+function moveNo(){
+
+  const margin=20;
+  const maxX=window.innerWidth-no.offsetWidth-margin;
+  const maxY=window.innerHeight-no.offsetHeight-margin;
+
+  const yesRect=yes.getBoundingClientRect();
+
+  let x,y;
+
+  do{
+    x=Math.random()*maxX;
+    y=Math.random()*maxY;
+  }
+  while(Math.abs(x-yesRect.left)<150 && Math.abs(y-yesRect.top)<80);
+
+  no.style.left=x+"px";
+  no.style.top=y+"px";
+
+  growYes();     // ← growth happens HERE
+  shrinkNo();    // ← shrink happens HERE
+}
+
+
+/* move on hover */
+no.addEventListener("mouseenter",moveNo);
+
+
+/* confetti burst */
+function confetti(){
+  for(let i=0;i<180;i++){
+    const c=document.createElement("div");
+
+    const size=Math.random()*8+6;
+
+    c.className="confetti";
+    c.style.width=size+"px";
+    c.style.height=size*1.8+"px";
+    c.style.left=Math.random()*100+"vw";
+    c.style.top="-20px";
+    c.style.background=`hsl(${Math.random()*360},100%,60%)`;
+    c.style.animationDuration=(Math.random()*1.5+1)+"s";
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),2000);
+  }
+}
+
+
+/* YES click */
+yes.addEventListener("click",()=>{
+  confetti();
+  setTimeout(()=>window.location.href="message.html",1200);
+});
+
+
+/* floating hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(Math.random()*20+12)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},350);
+</script>
+
+</body>
+</html>

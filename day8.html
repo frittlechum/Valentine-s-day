@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine's Day ❤️</title>
+<style>
+body{
+margin:0;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;color:white;
+background:linear-gradient(135deg,#8b0000,#ff0033,#330000);
+}
+.card{position:relative;width:95%;max-width:1000px;height:90vh;background:rgba(0,0,0,.45);border-radius:25px;}
+.photo{position:absolute;width:150px;height:150px;object-fit:cover;border-radius:18px;}
+.p1{top:25px;left:25px;} .p2{top:25px;right:25px;}
+.p3{bottom:25px;left:25px;} .p4{bottom:25px;right:25px;}
+.p5{top:50%;left:25px;transform:translateY(-50%);}
+.p6{top:50%;right:25px;transform:translateY(-50%);}
+.p7{bottom:25px;left:50%;transform:translateX(-50%);}
+.message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:55%;text-align:center;}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="photo50.jpg" class="photo p1">
+<img src="photo51.jpg" class="photo p2">
+<img src="photo52.jpg" class="photo p3">
+<img src="photo53.jpg" class="photo p4">
+<img src="photo54.jpg" class="photo p5">
+<img src="photo55.jpg" class="photo p6">
+<img src="photo56.jpg" class="photo p7">
+
+<div class="message">
+<h2>❤️ HAPPY VALENTINE'S DAY ❤️</h2>
+<p>
+The day is finally here meri jaan... HAPPY VALENTINE'S DAY!!!! Our first valentine's week and day together and the starting of many more to enjoy together heheheeee. I am genuinely so happy to have you as my valentine and my future wife, my dear girlfriend Pyunika ji. I love you so so so so so so so so so so so so so so muchhhhhhhhhhhhhhhhhh. MWWWWAAAAHHHHHHHHHHHHHHH!!! 😘😘😘😘💗💖💓🤗🤗💍
+</p>
+</div>
+</div>
+<script>
+const unlockDate = new Date("2026-02-14"); // CHANGE THIS DATE
+
+const today = new Date();
+
+if (today < unlockDate) {
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:sans-serif;
+        background:#111;
+        color:white;
+        text-align:center;
+    ">
+        <h1>💌 Not yet baby 💌</h1>
+        <p>Come back on ${unlockDate.toDateString()} ❤️</p>
+    </div>`;
+}
+</script>
+</body>
+</html>
