@@ -82,9 +82,12 @@ body{
 </div>
 
 <script>
-// Unlocks for the ENTIRE day on Feb 8, 2026
-const unlockDate = new Date("2026-02-07T23:59:59");
+// Unlocks starting at the BEGINNING of Feb 8, 2026
+const unlockDate = new Date(2026, 1, 8); // Feb = 1
 const today = new Date();
+
+// Remove time from today's date
+today.setHours(0,0,0,0);
 
 if (today < unlockDate) {
     document.body.innerHTML = `
@@ -107,4 +110,3 @@ if (today < unlockDate) {
 
 </body>
 </html>
-
