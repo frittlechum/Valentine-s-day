@@ -41,9 +41,12 @@ Hehehehe, aagaya sweetest day... future mei saari cavities apko mai hi kraunga h
 </div>
 </div>
 <script>
-const unlockDate = new Date("2026-02-09"); // CHANGE THIS DATE
-
+// Unlocks starting at the BEGINNING of Feb 8, 2026
+const unlockDate = new Date(2026, 1, 9); // Feb = 1
 const today = new Date();
+
+// Remove time from today's date
+today.setHours(0,0,0,0);
 
 if (today < unlockDate) {
     document.body.innerHTML = `
@@ -65,3 +68,4 @@ if (today < unlockDate) {
 </script>
 </body>
 </html>
+
