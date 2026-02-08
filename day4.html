@@ -39,9 +39,12 @@ meri jaan...You are my teddy and i am MORE THAN HAPPY to be your teddy and your 
 </div>
 </div>
 <script>
-const unlockDate = new Date("2026-02-10"); // CHANGE THIS DATE
-
+// Unlocks starting at the BEGINNING of Feb 8, 2026
+const unlockDate = new Date(2026, 1, 10); // Feb = 1
 const today = new Date();
+
+// Remove time from today's date
+today.setHours(0,0,0,0);
 
 if (today < unlockDate) {
     document.body.innerHTML = `
@@ -63,3 +66,4 @@ if (today < unlockDate) {
 </script>
 </body>
 </html>
+
