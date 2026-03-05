@@ -35,7 +35,7 @@ h1{
 .day{
   padding:18px;
   border-radius:14px;
-  background:rgba(255,255,255,0.18);
+  background:#ff4d6d;
   cursor:pointer;
   transition:.2s;
   white-space:pre-line;
@@ -44,15 +44,6 @@ h1{
 
 .day:hover{
   transform:scale(1.05);
-}
-
-.locked{
-  opacity:.5;
-  cursor:not-allowed;
-}
-
-.unlocked{
-  background:#ff4d6d;
 }
 </style>
 </head>
@@ -65,18 +56,18 @@ h1{
 </div>
 
 <script>
+
 const days=[
-  {name:"🌹 Rose Day", date:7},
-  {name:"💍 Propose Day", date:8},
-  {name:"🍫 Chocolate Day", date:9},
-  {name:"🧸 Teddy Day", date:10},
-  {name:"🤞 Promise Day", date:11},
-  {name:"🤗 Hug Day", date:12},
-  {name:"💋 Kiss Day", date:13},
-  {name:"❤️ Valentine’s Day", date:14}
+  "🌹 Rose Day",
+  "💍 Propose Day",
+  "🍫 Chocolate Day",
+  "🧸 Teddy Day",
+  "🤞 Promise Day",
+  "🤗 Hug Day",
+  "💋 Kiss Day",
+  "❤️ Valentine’s Day"
 ];
 
-/* sentence passwords */
 const passwords={
   1:"You",
   2:"stole",
@@ -89,33 +80,25 @@ const passwords={
 };
 
 const grid=document.getElementById("grid");
-const now=new Date();
-const today=now.getDate();
 
-days.forEach((d,i)=>{
+days.forEach((name,i)=>{
   const div=document.createElement("div");
   div.className="day";
-
-  if(today>=d.date){
-    div.classList.add("unlocked");
-    div.innerText=d.name+"\n(Open)";
-    div.onclick=()=>openDay(i+1);
-  }else{
-    div.classList.add("locked");
-    div.innerText=d.name+"\n🔒 Locked";
-  }
-
+  div.innerText=name + "\n(Open)";
+  div.onclick=()=>openDay(i+1);
   grid.appendChild(div);
 });
 
 function openDay(num){
   const pass=prompt("Enter today's password 💖");
+
   if(pass===passwords[num]){
     window.location.href="day"+num+".html";
   }else{
     alert("Wrong password 😛");
   }
 }
+
 </script>
 
 </body>
